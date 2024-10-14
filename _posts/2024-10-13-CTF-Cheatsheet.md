@@ -284,7 +284,7 @@ Type `binary` to download without interuption
 ```bash
 #install pyftpdlib if it's not found and "externally managed"
 python3 -m pip install pyftpdlib --break-system-packages
-python -m pyftpdlib -p 21 --write
+python3 -m pyftpdlib -p 21 --write
 ```
 
 ## Hydra - brute force directory
