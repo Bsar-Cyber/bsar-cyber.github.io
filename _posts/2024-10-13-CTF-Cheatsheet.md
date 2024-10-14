@@ -275,6 +275,7 @@ Copy something from some system to some other system:
 
 ## ftp
 When entering passive mode, type: `passive` helps speed ftp response
+\
 Type `binary` to download without interuption
 
 
@@ -315,7 +316,7 @@ python -m pyftpdlib -p 21 --write
 ## wget
 
 `wget http://10.10.10.10:8000/file` On Linux
-
+\
 `wget http://10.10.10.10:8000/file file` On Window, we need to name the output file
 
 ## **CVE-2019-14287**
