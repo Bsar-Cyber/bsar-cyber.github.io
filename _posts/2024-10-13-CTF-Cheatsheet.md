@@ -72,7 +72,7 @@ stty raw -echo; fg
 echo $TERM
 ```
 
-note that shell will be lag and we can also `CTRL+L` to clear terminal
+Note that shell will be lag and we can also `CTRL+L` to clear terminal
 
 ## clear terminal
 
@@ -139,7 +139,7 @@ find / -name id_rsa 2> /dev/null
 
 `find / -type f -name reverseshell`
 
-`whereis docker`   #find the path of things
+`whereis docker`   Find the path of things
 
 ## find files (windows)
 
@@ -371,7 +371,7 @@ syntax:
 
 ## Nano
 
-`ctrl+k`     #delete the whole line
+`ctrl+k`     Delete the whole line
 
 ## Unzip rockyou.txt.gz
 
@@ -403,7 +403,7 @@ or one liner
 
 ## Decode Base64 on linux/windows 11 terminal
 
-#have python installed
+Have python installed
 
 `python -m base64 -d backup_credentials.txt`
 
