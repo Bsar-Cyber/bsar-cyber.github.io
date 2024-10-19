@@ -2,7 +2,7 @@
 title: CTF Cheatsheet
 description: A handy cheatsheet for CTF so I won't have to lose my mind finding correct syntax.
 author: Bsar
-date: 2024-10-13
+date: 2024-10-14 00:00:00
 categories: [Cheatsheet]
 tags: [Cheatsheet]
 pin: true
@@ -72,7 +72,7 @@ stty raw -echo; fg
 echo $TERM
 ```
 
-Note that shell will be lag and we can also `CTRL+L` to clear terminal
+Note that shell will be laggy but we can also use `CTRL+L` to clear terminal
 
 ## clear terminal
 
@@ -82,7 +82,7 @@ Window: `cls`
 
 ## OSCP Style cat flag, ip and date in oneliner
 
-`cd /root && cat root.txt && cd /home/bill && cat user.txt && ifconfig && date'`
+`cd /home/bill && cat user.txt && cd /root && cat root.txt && ifconfig && date'`
 
 ## Window OSCP flags
 
@@ -271,6 +271,7 @@ Copy something from some system to some other system:
 `ssh2john #rsa/key/path > rsa`
 
 `john #path/to/RSA`
+\
 `ssh -i ~/.ssh/custom_key_name SYSUSER@IP_ADDRESS_OF_SERVER`
 
 ## ftp
@@ -298,8 +299,18 @@ python3 -m pyftpdlib -p 21 --write
 | hydra -P <wordlist> -v <ip> <protocol> | Brute force against a protocol of your choice |
 | hydra -v -V -u -L <username list> -P <password list> -t 1 -u <ip> <protocol> | You can use Hydra to bruteforce usernames as well as passwords. It will loop through every combination in your lists. (-vV = verbose mode, showing login attempts) |
 | hydra -t 1 -V -f -l <username> -P <wordlist> rdp://<ip> | Attack a Windows Remote Desktop with a password list. |
-| hydra -l <username> -P .<password list> $ip -V http-form-post 
-'/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' | Craft a more specific request for Hydra to brute force. |
+| hydra -l <username> -P .<password list> $ip -V http-form-post '/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' | Craft a more specific request for Hydra to brute force. |
+
+## Bruteforce HTTP basic Authenticate
+`hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.10 http-get /directory`
+\
+`-l` username
+\
+`-P` password list
+\
+`http-get` get request for HTTP
+\
+`/directory` if we want to brute force a directory
 
 ## Use John
 
