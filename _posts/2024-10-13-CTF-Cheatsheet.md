@@ -370,11 +370,11 @@ syntax:
 
 ### FFUF subdomain/virtual Host
 
-ffuf -H "Host: FUZZ.10.10.219.238" -u http://10.10.10.10 -w /usr/share/wordlists/seclists/Discovery/DNS/subdomaains-top1million-10000.txt
+`ffuf -H "Host: FUZZ.10.10.219.238" -u http://10.10.10.10 -w /usr/share/wordlists/seclists/Discovery/DNS/subdomaains-top1million-10000.txt`
 
 Do a simple command first then filter the reponse
 
-ffuf -H "Host: FUZZ.10.10.219.238" -u http://10.10.10.10 -w /usr/share/wordlists/seclists/Discovery/DNS/subdomaains-top1million-10000.txt -fs 140
+`ffuf -H "Host: FUZZ.10.10.219.238" -u http://10.10.10.10 -w /usr/share/wordlists/seclists/Discovery/DNS/subdomaains-top1million-10000.txt -fs 140`
 
 `-fs` filter size
 
