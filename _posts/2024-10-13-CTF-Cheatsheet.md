@@ -302,7 +302,7 @@ python3 -m pyftpdlib -p 21 --write
 | hydra -l <username> -P .<password list> $ip -V http-form-post '/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' | Craft a more specific request for Hydra to brute force. |
 
 ## Bruteforce HTTP basic Authenticate
-`hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.10 http-get /directory`
+`hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.10 http-get /{path of directory}`
 \
 `-l` username
 \
@@ -310,7 +310,7 @@ python3 -m pyftpdlib -p 21 --write
 \
 `http-get` get request for HTTP
 \
-`/directory` if we want to brute force a directory
+`/{path of directory}` if we want to brute force a directory
 
 ## Use John
 
@@ -367,6 +367,16 @@ syntax:
 `ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u http://10.10.10.10/FUZZ -ic`
 
 `-ic` - ignore comments like #this is a comment
+
+### FFUF subdomain/virtual Host
+
+ffuf -H "Host: FUZZ.10.10.219.238" -u http://10.10.10.10 -w /usr/share/wordlists/seclists/Discovery/DNS/subdomaains-top1million-10000.txt
+
+Do a simple command first then filter the reponse
+
+ffuf -H "Host: FUZZ.10.10.219.238" -u http://10.10.10.10 -w /usr/share/wordlists/seclists/Discovery/DNS/subdomaains-top1million-10000.txt -fs 140
+
+`-fs` filter size
 
 ## Certutil (download file on window shell)
 
