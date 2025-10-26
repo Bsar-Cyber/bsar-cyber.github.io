@@ -1,6 +1,6 @@
 ---
 title: Internal (Windows)
-description: Enumerate SMB shares, gain foothold by exploiting Jupyter, pivot with SSH key, and escalate priviledge with Runas.
+description: Exploited Wordpress site with WPScan and brute force into web account. Then gain the initial foothold with common WordPress theme reverse shell. Discover Jenkins and pivot to the service to get the root credential.
 author: Bsar
 date: 2024-11-06 00:00:00 +06:00
 categories: [TryHackMe]
